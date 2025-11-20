@@ -9,7 +9,6 @@ button.addEventListener("click", () => {
   const allTasks = container.querySelectorAll("span");
   for (let i = 0; i < allTasks.length; i++) {
     if (allTasks[i].textContent === input11.value) {
-      alert("Công việc này đã tồn tại!");
       input11.value = "";
       return;
     }
