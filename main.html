@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        /* display: none; */
+        transition: all 0.3s ease;
+        opacity: 0;
+      }
+      .box.show {
+        /*  cách đặt của những class: box show */
+        /* display: block; */
+        opacity: 1;
+      }
+      .box.hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box show" data-animation-time="1000">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel saepe cum
+      quae aliquam. Cum aliquid rerum quibusdam, fugiat temporibus obcaecati,
+      ipsa sint distinctio quae quod optio itaque earum. Repellendus, similique.
+    </div>
+    <button>Hide</button>
+    <script src="main.js"></script>
+  </body>
+</html>
