@@ -20,6 +20,7 @@ button.addEventListener("click", () => {
   taskText = document.createElement("span");
   taskText.textContent = input11.value
     .replaceAll("<", "*")
+    .replaceAll(">", "*")
     .replaceAll(".", "*")
     .replaceAll("@", "*");
 
