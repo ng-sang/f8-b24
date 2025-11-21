@@ -6,9 +6,11 @@ button.addEventListener("click", () => {
   if (input11.value === "") {
     return;
   }
+
   const allTasks = container.querySelectorAll("span");
   for (let i = 0; i < allTasks.length; i++) {
     if (allTasks[i].textContent === input11.value) {
+      alert("Công việc này đã tồn tại!");
       input11.value = "";
       return;
     }
@@ -16,7 +18,10 @@ button.addEventListener("click", () => {
   const task = document.createElement("div");
 
   taskText = document.createElement("span");
-  taskText.textContent = input11.value;
+  taskText.textContent = input11.value.replaceAll("<", "'");
+  taskText.textContent = input11.value.replaceAll(">", "'");
+  taskText.textContent = input11.value.replaceAll(".", "*");
+
   task.appendChild(taskText);
   container.appendChild(task);
   task.style.border = "2px solid black";
@@ -87,8 +92,10 @@ button.addEventListener("click", () => {
     seach.appendChild(buttonseach);
     // đặt giá trị ban đầu của input là nội dung hiện tại của taskText
     inputseach.value = taskText.textContent;
+
     buttonseach.addEventListener("click", () => {
       // Cập nhật lại taskText với giá trị mới từ input
+
       taskText.textContent = inputseach.value;
       // Sau đó mới xóa seach
       seach.remove();
