@@ -18,9 +18,10 @@ button.addEventListener("click", () => {
   const task = document.createElement("div");
 
   taskText = document.createElement("span");
-  taskText.textContent = input11.value.replaceAll("<", "'");
-  taskText.textContent = input11.value.replaceAll(">", "'");
-  taskText.textContent = input11.value.replaceAll(".", "*");
+  taskText.textContent = input11.value
+    .replaceAll("<", "*")
+    .replaceAll(".", "*")
+    .replaceAll("@", "*");
 
   task.appendChild(taskText);
   container.appendChild(task);
